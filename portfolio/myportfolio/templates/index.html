@@ -1,0 +1,86 @@
+{%extends 'base.html'%} {% block content %} {{ block.super}}
+<header class="masthead" style="background-image: url('static/images/wallpaper6.jpg');background-repeat:no-repeat;background-size: 100%;padding-bottom: 10%">
+    <div class="intro-body content-section text-center ">
+        <div class="container ">
+            <div class="row ">
+                <div class="col-lg-8 mx-auto ">
+                    <h1 class="brand-heading ">Her's Portfolio</h1>
+                    <p class="intro-text " style="color:black ">Portfolio Website.
+                        <br>Created by Cynthia Kasambuli</p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- About Section -->
+<section id="about " class="content-section text-center ">
+    <div class="container ">
+        <div class="row ">
+            <div class="col-lg-8 mx-auto ">
+                <h2>About </h2>
+                <p>I am a FULLSTACK web developer,really passionate about new creations and hungry for creative ideas.</p>
+                <p>I am fluent in Javacsript and some of its frameworks like angular and react, Jquery, Python and some of its frameworks like django and flask and ofcourse html, css and bootstrap 3 and 4</p>
+                <p>This is basically a website on web applications and websites that I have done in my Programming Bootcamp period.Check more projects at
+                    <a href="https://github.com/kasambuli ">my github page</a>. The projects are open source, and you can use them for any purpose.</p>
+
+            </div>
+        </div>
+    </div>
+</section>
+<br>
+<!-- Image Showcases -->
+<section class="showcase ">
+    <div class="container p-0 ">
+        <!-- Looping through projects   -->
+        {% for project in projects %}
+
+        <div class="row no-gutters " style="padding-top: 15%;padding-bottom:10%">
+
+            <div class="col-lg-6 order-lg-2 text-white showcase-img ">
+                <img src="{{ project.article_image.url}}" class="img-fluid" alt="Image">
+            </div>
+            <div class="col-lg-6 order-lg-1 my-auto showcase-text ">
+                <h2 class="text-center "> {{ project.title }} </h2>
+                <p class="lead mb-0 ">{{ project.project }} </p>
+                <p>
+                    <a href="{{ project.link }} ">link to deployed site</a>
+                </p>
+            </div>
+        </div>{% endfor %}
+
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer bg-light" style="background-image: url('static/images/wallpaper2.jpg');background-repeat:no-repeat;background-size: 100%;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-2 h-100"></div>
+            <div class=" col-lg-8 h-100 text-center ">
+                <ul class="list-inline mb-2 ">
+                    <li class="list-inline-item ">
+                        <a href="# ">About</a>
+                    </li>
+                    <li class="list-inline-item ">&sdot;</li>
+                    <li class="list-inline-item ">
+                        <a href="# ">Contact</a>
+                    </li>
+                    <li class="list-inline-item ">&sdot;</li>
+                    <li class="list-inline-item ">
+                        <a href="# ">Terms of Use</a>
+                    </li>
+                    <li class="list-inline-item ">&sdot;</li>
+                    <li class="list-inline-item ">
+                        <a href="# ">Privacy Policy</a>
+                    </li>
+                </ul>
+                <p class="text-muted small mb-4 mb-lg-0 ">&copy; CynthiaKasambuli 2018. All Rights Reserved.</p>
+            </div>
+            <div class="col-lg-2 h-100"></div>
+
+        </div>
+    </div>
+</footer>
+{% endblock %}
